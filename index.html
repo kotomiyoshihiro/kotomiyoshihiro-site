@@ -289,6 +289,16 @@
       transform: translate(-1px, -1px);
     }
 
+    .download.is-disabled {
+      color: var(--muted);
+    }
+
+    .download.is-disabled:hover {
+      border-color: var(--line);
+      box-shadow: none;
+      transform: none;
+    }
+
     .icon {
       display: grid;
       place-items: center;
@@ -355,6 +365,13 @@
     .button.secondary {
       background: var(--white);
       color: var(--ink);
+    }
+
+    .button.is-disabled {
+      background: var(--white);
+      color: var(--muted);
+      border-color: var(--line);
+      cursor: default;
     }
 
     .footer {
@@ -489,41 +506,41 @@
             </p>
 
             <div class="downloads">
-              <a class="download" href="downloads/pair-record.pdf">
+              <div class="download is-disabled">
                 <span class="icon">01</span>
                 <span>
                   <strong>ペア出題記録シート</strong>
                   <span>出題したカード、説明できたこと、次に復習することを残す用紙。</span>
                 </span>
-                <span class="arrow">→</span>
-              </a>
+                <span class="arrow">準備中</span>
+              </div>
 
-              <a class="download" href="downloads/review-check.pdf">
+              <div class="download is-disabled">
                 <span class="icon">02</span>
                 <span>
                   <strong>復習チェック表</strong>
                   <span>「一度説明できた」で終わらせず、日をあけて戻るための表。</span>
                 </span>
-                <span class="arrow">→</span>
-              </a>
+                <span class="arrow">準備中</span>
+              </div>
 
-              <a class="download" href="downloads/blank-card.pdf">
+              <div class="download is-disabled">
                 <span class="icon">03</span>
                 <span>
                   <strong>白紙カードテンプレート</strong>
                   <span>身近な現象を、自分で因果カードにするための用紙。</span>
                 </span>
-                <span class="arrow">→</span>
-              </a>
+                <span class="arrow">準備中</span>
+              </div>
 
-              <a class="download" href="downloads/group-guide.pdf">
+              <div class="download is-disabled">
                 <span class="icon">04</span>
                 <span>
                   <strong>ペア・教室用ミニガイド</strong>
                   <span>親子、友だち、授業で問いを出し合うときの進め方。</span>
                 </span>
-                <span class="arrow">→</span>
-              </a>
+                <span class="arrow">準備中</span>
+              </div>
             </div>
 
             <p class="notice">
@@ -539,11 +556,11 @@
           <div>
             <p>
               146の理科の問いを、丸暗記ではなく「なぜそうなるのか」で説明するための本です。
-              一人で読むだけでなく、親子・友だち・塾で問いを出し合う使い方を想定しています。
+              一人で読むだけでなく、友だち同士や教室で問いを出し合う使い方を想定しています。
             </p>
             <div class="links">
-              <a class="button" href="#" aria-label="Amazonの商品ページ。公開後に差し替え">Amazonで見る</a>
-              <a class="button secondary" href="#" aria-label="無料サンプル。公開後に差し替え">サンプルを見る</a>
+              <span class="button is-disabled" aria-disabled="true">出版準備中</span>
+              <a class="button secondary" href="#downloads">補助プリントを見る</a>
             </div>
           </div>
         </div>
@@ -557,8 +574,8 @@
               琴見由弘。小学生向けの理科・算数・適性検査対策を中心に、問いを立てて説明する力を育てる教材を作っています。
             </p>
             <div class="links">
-              <a class="button secondary" href="#" aria-label="note。公開後に差し替え">note</a>
-              <a class="button secondary" href="#" aria-label="X。公開後に差し替え">X</a>
+              <a class="button secondary" href="https://note.com/kotomiyoshihiro">note</a>
+              <a class="button secondary" href="https://x.com/kotomiyoshihiro">X</a>
             </div>
           </div>
         </div>
