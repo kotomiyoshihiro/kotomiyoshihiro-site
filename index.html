@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>琴見由弘 | 理科因果カード</title>
+  <meta name="description" content="琴見由弘の教材ページ。理科因果カードの補助プリントを配布しています。">
+  <style>
+    :root {
+      --ink: #171a1c;
+      --muted: #5b6469;
+      --line: #cfd7d3;
+      --paper: #fbfbf8;
+      --wash: #eef5f1;
+      --accent: #176b5f;
+      --accent-2: #9b4b2f;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(23, 106, 95, 0.07) 0 1px, transparent 1px 100%),
+        linear-gradient(180deg, rgba(23, 106, 95, 0.05) 0 1px, transparent 1px 100%),
+        var(--paper);
+      background-size: 28px 28px;
+      font-family: "Yu Mincho", "Hiragino Mincho ProN", "BIZ UDPMincho", serif;
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site {
+      min-height: 100svh;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      width: min(1080px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 22px 0 14px;
+      border-bottom: 2px solid var(--ink);
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+    }
+
+    .brand {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 14px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .nav a {
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav a:hover {
+      color: var(--ink);
+      border-color: var(--accent);
+    }
+
+    .hero {
+      width: min(1080px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 54px 0 40px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+      gap: 48px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: var(--accent);
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 38px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 1.03;
+      letter-spacing: 0;
+      font-weight: 800;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 26px 0 0;
+      color: #2c3234;
+      font-size: 18px;
+    }
+
+    .book-mark {
+      position: relative;
+      min-height: 360px;
+      border: 2px solid var(--ink);
+      background: var(--white);
+      box-shadow: 10px 10px 0 var(--ink);
+      padding: 26px;
+      overflow: hidden;
+    }
+
+    .book-mark::before {
+      content: "";
+      position: absolute;
+      inset: 18px auto 18px 18px;
+      width: 8px;
+      background: var(--accent);
+    }
+
+    .book-mark::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      bottom: -58px;
+      width: 180px;
+      height: 180px;
+      border: 2px solid var(--line);
+      transform: rotate(12deg);
+      background:
+        linear-gradient(90deg, transparent 48%, rgba(155, 75, 47, 0.16) 49% 51%, transparent 52%),
+        linear-gradient(180deg, transparent 48%, rgba(155, 75, 47, 0.16) 49% 51%, transparent 52%);
+      background-size: 34px 34px;
+    }
+
+    .book-label {
+      position: relative;
+      z-index: 1;
+      margin-left: 24px;
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .book-title {
+      position: relative;
+      z-index: 1;
+      margin: 50px 0 0 24px;
+      font-size: 36px;
+      line-height: 1.25;
+      font-weight: 800;
+    }
+
+    .book-note {
+      position: relative;
+      z-index: 1;
+      margin: 26px 0 0 24px;
+      color: var(--muted);
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .main {
+      width: min(1080px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 22px 0 72px;
+    }
+
+    .section {
+      padding: 34px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 36px;
+      align-items: start;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.4;
+      letter-spacing: 0;
+    }
+
+    .section p {
+      margin: 0;
+      color: #2d3436;
+    }
+
+    .downloads {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+    }
+
+    .download {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 14px;
+      align-items: center;
+      min-height: 86px;
+      padding: 17px 18px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      text-decoration: none;
+    }
+
+    .download:hover {
+      border-color: var(--accent);
+      box-shadow: 4px 4px 0 rgba(23, 106, 95, 0.2);
+      transform: translate(-1px, -1px);
+    }
+
+    .icon {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border: 2px solid var(--ink);
+      color: var(--ink);
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .download strong {
+      display: block;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .download span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .arrow {
+      color: var(--accent);
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .notice {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-left: 5px solid var(--accent-2);
+      background: rgba(155, 75, 47, 0.08);
+      color: #3a302b;
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 8px 16px;
+      border: 2px solid var(--ink);
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .button.secondary {
+      background: var(--white);
+      color: var(--ink);
+    }
+
+    .footer {
+      width: min(1080px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 38px;
+      border-top: 2px solid var(--ink);
+      color: var(--muted);
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+      font-size: 12px;
+    }
+
+    @media (max-width: 820px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 34px;
+      }
+
+      .book-mark {
+        min-height: 300px;
+      }
+
+      .section-head {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .downloads {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      body {
+        background: var(--white);
+      }
+
+      .download,
+      .book-mark {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header class="topbar">
+      <div class="brand">琴見由弘</div>
+      <nav class="nav" aria-label="主要リンク">
+        <a href="#downloads">補助プリント</a>
+        <a href="#book">理科因果カード</a>
+        <a href="#profile">著者について</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">教材と補助プリント</p>
+        <h1 id="page-title">理科のなぜを、原因からたどる。</h1>
+        <p class="lead">
+          『理科因果カード』を、親子・友だち・教室で使うための補助プリントを置いています。
+          本文の代わりではなく、問いを出し合う時間を作るための資料です。
+        </p>
+        <div class="links">
+          <a class="button" href="#downloads">補助プリントを見る</a>
+          <a class="button secondary" href="#book">本について</a>
+        </div>
+      </div>
+
+      <aside class="book-mark" aria-label="理科因果カードの概要">
+        <div class="book-label">SCIENCE CAUSAL CARDS</div>
+        <div class="book-title">理科因果<br>カード</div>
+        <p class="book-note">
+          中学受験・適性検査に向けて、現象を「原因 → 途中 → 結果」で説明する練習をする教材。
+        </p>
+      </aside>
+    </section>
+
+    <main class="main">
+      <section class="section" id="downloads" aria-labelledby="downloads-title">
+        <div class="section-head">
+          <h2 id="downloads-title">補助プリント</h2>
+          <div>
+            <p>
+              印刷して、問題を出し合うときに使えます。全カード本文のPDFではありません。
+            </p>
+
+            <div class="downloads">
+              <a class="download" href="downloads/pair-record.pdf">
+                <span class="icon">01</span>
+                <span>
+                  <strong>ペア出題記録シート</strong>
+                  <span>出題したカード、説明できたこと、次に復習することを残す用紙。</span>
+                </span>
+                <span class="arrow">→</span>
+              </a>
+
+              <a class="download" href="downloads/review-check.pdf">
+                <span class="icon">02</span>
+                <span>
+                  <strong>復習チェック表</strong>
+                  <span>「一度説明できた」で終わらせず、日をあけて戻るための表。</span>
+                </span>
+                <span class="arrow">→</span>
+              </a>
+
+              <a class="download" href="downloads/blank-card.pdf">
+                <span class="icon">03</span>
+                <span>
+                  <strong>白紙カードテンプレート</strong>
+                  <span>身近な現象を、自分で因果カードにするための用紙。</span>
+                </span>
+                <span class="arrow">→</span>
+              </a>
+
+              <a class="download" href="downloads/group-guide.pdf">
+                <span class="icon">04</span>
+                <span>
+                  <strong>ペア・教室用ミニガイド</strong>
+                  <span>親子、友だち、授業で問いを出し合うときの進め方。</span>
+                </span>
+                <span class="arrow">→</span>
+              </a>
+            </div>
+
+            <p class="notice">
+              ダウンロードファイルは準備中です。公開時には、メール登録なしで取得できる補助資料だけを置きます。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="book" aria-labelledby="book-title">
+        <div class="section-head">
+          <h2 id="book-title">理科因果カード</h2>
+          <div>
+            <p>
+              146の理科の問いを、丸暗記ではなく「なぜそうなるのか」で説明するための本です。
+              一人で読むだけでなく、親子・友だち・塾で問いを出し合う使い方を想定しています。
+            </p>
+            <div class="links">
+              <a class="button" href="#" aria-label="Amazonの商品ページ。公開後に差し替え">Amazonで見る</a>
+              <a class="button secondary" href="#" aria-label="無料サンプル。公開後に差し替え">サンプルを見る</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="profile" aria-labelledby="profile-title">
+        <div class="section-head">
+          <h2 id="profile-title">著者について</h2>
+          <div>
+            <p>
+              琴見由弘。小学生向けの理科・算数・適性検査対策を中心に、問いを立てて説明する力を育てる教材を作っています。
+            </p>
+            <div class="links">
+              <a class="button secondary" href="#" aria-label="note。公開後に差し替え">note</a>
+              <a class="button secondary" href="#" aria-label="X。公開後に差し替え">X</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 琴見由弘</span>
+    </footer>
+  </div>
+</body>
+</html>
