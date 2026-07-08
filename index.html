@@ -388,19 +388,56 @@
       .topbar {
         align-items: flex-start;
         flex-direction: column;
+        gap: 12px;
+        width: min(1080px, calc(100% - 28px));
+        padding: 14px 0 10px;
       }
 
       .nav {
         justify-content: flex-start;
+        gap: 10px;
+        font-size: 12px;
       }
 
       .hero {
+        width: min(1080px, calc(100% - 28px));
         grid-template-columns: 1fr;
-        padding-top: 34px;
+        gap: 18px;
+        padding: 18px 0 22px;
+      }
+
+      .eyebrow {
+        margin-bottom: 12px;
+      }
+
+      h1 {
+        font-size: 36px;
+        line-height: 1.12;
+      }
+
+      .lead {
+        margin-top: 18px;
+        font-size: 16px;
+        line-height: 1.7;
+      }
+
+      .links {
+        margin-top: 16px;
       }
 
       .book-mark {
-        min-height: 300px;
+        min-height: 138px;
+        padding: 20px;
+        box-shadow: 6px 6px 0 var(--ink);
+      }
+
+      .book-title {
+        margin-top: 18px;
+        font-size: 28px;
+      }
+
+      .book-note {
+        display: none;
       }
 
       .section-head {
@@ -435,7 +472,7 @@
       <div class="brand">琴見由弘</div>
       <nav class="nav" aria-label="主要リンク">
         <a href="#works">入口</a>
-        <a href="#rika-cards">理科因果カード</a>
+        <a href="#book">理科因果カード</a>
         <a href="#kazoetoku">かぞえ徳</a>
         <a href="#downloads">補助プリント</a>
         <a href="#profile">著者について</a>
@@ -444,11 +481,12 @@
 
     <section class="hero" aria-labelledby="page-title">
       <div>
-        <p class="eyebrow">教材と文章</p>
-        <h1 id="page-title">学びの筋道を、細かいステップでほどく。</h1>
+        <p class="eyebrow">教材と道具</p>
+        <h1 id="page-title">問いと行動を、細かいステップでほどく。</h1>
         <p class="lead">
-          塾講師／プログラマーとして、理科の「なぜ？」、日常の小さな習慣、学び方やメタ認知について考えています。
-          教材と補助資料を、このページにまとめていきます。
+          塾講師／プログラマーとして、理科の「なぜ？」を原因から結果までほどく教材と、
+          日常の小さな行動を +1 で残す道具を作っています。
+          学び方やメタ認知の話も、少しずつまとめます。
         </p>
         <div class="links">
           <a class="button" href="#works">入口を見る</a>
@@ -460,7 +498,7 @@
         <div class="book-label">KOTOMI YOSHIHIRO</div>
         <div class="book-title">琴見<br>由弘</div>
         <p class="book-note">
-          理科、習慣、学び方。知識や行動を、細かいステップで扱うための教材と道具を作っています。
+          理科、習慣、学び方。問いや行動を、責めずに細かいステップで扱うための教材と道具を作っています。
         </p>
       </aside>
     </section>
@@ -475,13 +513,13 @@
             </p>
 
             <div class="works">
-              <a class="work-card" id="rika-cards" href="#downloads">
+              <a class="work-card" id="rika-cards" href="#book">
                 <span>
                   <span class="work-kicker">SCIENCE</span>
                   <strong>理科因果カード</strong>
                   <span>中学受験・適性検査の理科を、原因から結果まで説明するための教材。</span>
                 </span>
-                <span class="arrow">補助プリントへ →</span>
+                <span class="arrow">詳しく見る →</span>
               </a>
 
               <a class="work-card" id="kazoetoku" href="https://kazoetoku.pages.dev/">
@@ -571,7 +609,9 @@
           <h2 id="profile-title">著者について</h2>
           <div>
             <p>
-              琴見由弘。小学生向けの理科・算数・適性検査対策を中心に、問いを立てて説明する力を育てる教材を作っています。
+              琴見由弘。塾講師／プログラマー。理科の「なぜ？」を原因から結果までほどく教材と、
+              日常の小さな行動を +1 で残す道具を作っています。
+              中学受験・適性検査、メタ認知、体と心と頭を整える話も扱います。
             </p>
             <div class="links">
               <a class="button secondary" href="https://note.com/kotomiyoshihiro">note</a>
