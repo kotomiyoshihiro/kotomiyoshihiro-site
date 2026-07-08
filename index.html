@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>琴見由弘 | 理科因果カード</title>
-  <meta name="description" content="琴見由弘の教材ページ。理科因果カードの補助プリントを配布しています。">
+  <title>琴見由弘</title>
+  <meta name="description" content="琴見由弘の著者サイト。理科因果カード、かぞえ徳、学び方やメタ認知についての発信をまとめています。">
   <style>
     :root {
       --ink: #171a1c;
@@ -225,6 +225,52 @@
       font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
     }
 
+    .works {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+    }
+
+    .work-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 190px;
+      padding: 22px;
+      background: var(--white);
+      border: 2px solid var(--ink);
+      text-decoration: none;
+    }
+
+    .work-card:hover {
+      box-shadow: 6px 6px 0 rgba(23, 106, 95, 0.2);
+      transform: translate(-1px, -1px);
+    }
+
+    .work-kicker {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .work-card strong {
+      display: block;
+      margin-top: 14px;
+      font-size: 22px;
+      line-height: 1.35;
+    }
+
+    .work-card span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
     .download {
       display: grid;
       grid-template-columns: auto 1fr auto;
@@ -348,6 +394,10 @@
       .downloads {
         grid-template-columns: 1fr;
       }
+
+      .works {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media print {
@@ -367,36 +417,69 @@
     <header class="topbar">
       <div class="brand">琴見由弘</div>
       <nav class="nav" aria-label="主要リンク">
+        <a href="#works">入口</a>
+        <a href="#rika-cards">理科因果カード</a>
+        <a href="#kazoetoku">かぞえ徳</a>
         <a href="#downloads">補助プリント</a>
-        <a href="#book">理科因果カード</a>
         <a href="#profile">著者について</a>
       </nav>
     </header>
 
     <section class="hero" aria-labelledby="page-title">
       <div>
-        <p class="eyebrow">教材と補助プリント</p>
-        <h1 id="page-title">理科のなぜを、原因からたどる。</h1>
+        <p class="eyebrow">教材と文章</p>
+        <h1 id="page-title">学びの筋道を、細かいステップでほどく。</h1>
         <p class="lead">
-          『理科因果カード』を、親子・友だち・教室で使うための補助プリントを置いています。
-          本文の代わりではなく、問いを出し合う時間を作るための資料です。
+          塾講師／プログラマーとして、理科の「なぜ？」、数の感覚、学び方やメタ認知について考えています。
+          教材と補助資料を、このページにまとめていきます。
         </p>
         <div class="links">
-          <a class="button" href="#downloads">補助プリントを見る</a>
-          <a class="button secondary" href="#book">本について</a>
+          <a class="button" href="#works">入口を見る</a>
+          <a class="button secondary" href="#profile">著者について</a>
         </div>
       </div>
 
-      <aside class="book-mark" aria-label="理科因果カードの概要">
-        <div class="book-label">SCIENCE CAUSAL CARDS</div>
-        <div class="book-title">理科因果<br>カード</div>
+      <aside class="book-mark" aria-label="琴見由弘の概要">
+        <div class="book-label">KOTOMI YOSHIHIRO</div>
+        <div class="book-title">琴見<br>由弘</div>
         <p class="book-note">
-          中学受験・適性検査に向けて、現象を「原因 → 途中 → 結果」で説明する練習をする教材。
+          理科、数、学び方。知識をただ覚えるのではなく、論理を細かいステップで積み上げるための教材を作っています。
         </p>
       </aside>
     </section>
 
     <main class="main">
+      <section class="section" id="works" aria-labelledby="works-title">
+        <div class="section-head">
+          <h2 id="works-title">入口</h2>
+          <div>
+            <p>
+              いま公開している教材と、これから整えていくページです。
+            </p>
+
+            <div class="works">
+              <a class="work-card" id="rika-cards" href="#downloads">
+                <span>
+                  <span class="work-kicker">SCIENCE</span>
+                  <strong>理科因果カード</strong>
+                  <span>中学受験・適性検査の理科を、原因から結果まで説明するための教材。</span>
+                </span>
+                <span class="arrow">補助プリントへ →</span>
+              </a>
+
+              <a class="work-card" id="kazoetoku" href="https://kazoetoku.pages.dev/">
+                <span>
+                  <span class="work-kicker">MATH</span>
+                  <strong>かぞえ徳</strong>
+                  <span>数える力、量の感覚、計算の土台を扱う教材ページ。</span>
+                </span>
+                <span class="arrow">開く →</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section" id="downloads" aria-labelledby="downloads-title">
         <div class="section-head">
           <h2 id="downloads-title">補助プリント</h2>
