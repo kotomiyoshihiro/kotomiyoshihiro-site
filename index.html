@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>琴見由弘</title>
-  <meta name="description" content="琴見由弘の著者サイト。理科因果カード、かぞえ徳、学び方やメタ認知についての発信をまとめています。">
+  <title>琴見由弘｜著者サイト</title>
+  <meta name="description" content="琴見由弘の著者サイト。『理科因果ノート』と習慣アプリ「かぞえ徳」の紹介、著者プロフィールを掲載しています。">
   <style>
     :root {
       --ink: #171a1c;
@@ -464,6 +464,14 @@
         box-shadow: none;
       }
     }
+    .book-cover { display: block; width: min(100%, 220px); height: auto; margin-top: 24px; box-shadow: 3px 5px 14px #171a1c22; }
+    .section p + p { margin-top: 18px; }
+    .book-subtitle, .author-name { font-weight: 700; }
+    .publication-status { color: var(--muted); font-size: 14px; }
+    .nav, .eyebrow, .work-card span, .book-label, .footer { font-size: 14px; }
+    .work-card span span:not(.work-kicker):not(.arrow) { font-size: 16px; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
 </head>
 <body>
@@ -471,10 +479,9 @@
     <header class="topbar">
       <div class="brand">琴見由弘</div>
       <nav class="nav" aria-label="主要リンク">
-        <a href="#works">入口</a>
-        <a href="#book">理科因果カード</a>
+        <a href="#works">本と道具</a>
+        <a href="#book">理科因果ノート</a>
         <a href="#kazoetoku">かぞえ徳</a>
-        <a href="#downloads">補助プリント</a>
         <a href="#profile">著者について</a>
       </nav>
     </header>
@@ -484,12 +491,11 @@
         <p class="eyebrow">教材と道具</p>
         <h1 id="page-title">問いと行動を、細かいステップでほどく。</h1>
         <p class="lead">
-          塾講師／プログラマーとして、理科の「なぜ？」を原因から結果までほどく教材と、
+          塾講師／システムエンジニアとして、理科の「なぜ？」を原因から結果までほどく教材と、
           日常の小さな行動を +1 で残す道具を作っています。
-          学び方やメタ認知の話も、少しずつまとめます。
         </p>
         <div class="links">
-          <a class="button" href="#works">入口を見る</a>
+          <a class="button" href="#works">本と道具を見る</a>
           <a class="button secondary" href="#profile">著者について</a>
         </div>
       </div>
@@ -506,17 +512,17 @@
     <main class="main">
       <section class="section" id="works" aria-labelledby="works-title">
         <div class="section-head">
-          <h2 id="works-title">入口</h2>
+          <h2 id="works-title">本と道具</h2>
           <div>
             <p>
-              いま公開している教材と、これから整えていくページです。
+              理科の理由をたどる本と、日々の行動を記録するアプリです。
             </p>
 
             <div class="works">
               <a class="work-card" id="rika-cards" href="#book">
                 <span>
                   <span class="work-kicker">SCIENCE</span>
-                  <strong>理科因果カード</strong>
+                  <strong>理科因果ノート</strong>
                   <span>中学受験・適性検査の理科を、原因から結果まで説明するための教材。</span>
                 </span>
                 <span class="arrow">詳しく見る →</span>
@@ -535,71 +541,18 @@
         </div>
       </section>
 
-      <section class="section" id="downloads" aria-labelledby="downloads-title">
-        <div class="section-head">
-          <h2 id="downloads-title">補助プリント</h2>
-          <div>
-            <p>
-              印刷して、問題を出し合うときに使えます。全カード本文のPDFではありません。
-            </p>
-
-            <div class="downloads">
-              <div class="download is-disabled">
-                <span class="icon">01</span>
-                <span>
-                  <strong>ペア出題記録シート</strong>
-                  <span>出題したカード、説明できたこと、次に復習することを残す用紙。</span>
-                </span>
-                <span class="arrow">準備中</span>
-              </div>
-
-              <div class="download is-disabled">
-                <span class="icon">02</span>
-                <span>
-                  <strong>復習チェック表</strong>
-                  <span>「一度説明できた」で終わらせず、日をあけて戻るための表。</span>
-                </span>
-                <span class="arrow">準備中</span>
-              </div>
-
-              <div class="download is-disabled">
-                <span class="icon">03</span>
-                <span>
-                  <strong>白紙カードテンプレート</strong>
-                  <span>身近な現象を、自分で因果カードにするための用紙。</span>
-                </span>
-                <span class="arrow">準備中</span>
-              </div>
-
-              <div class="download is-disabled">
-                <span class="icon">04</span>
-                <span>
-                  <strong>ペア・教室用ミニガイド</strong>
-                  <span>親子、友だち、授業で問いを出し合うときの進め方。</span>
-                </span>
-                <span class="arrow">準備中</span>
-              </div>
-            </div>
-
-            <p class="notice">
-              ダウンロードファイルは準備中です。公開時には、メール登録なしで取得できる補助資料だけを置きます。
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section class="section" id="book" aria-labelledby="book-title">
         <div class="section-head">
-          <h2 id="book-title">理科因果カード</h2>
           <div>
-            <p>
-              146の理科の問いを、丸暗記ではなく「なぜそうなるのか」で説明するための本です。
-              一人で読むだけでなく、友だち同士や教室で問いを出し合う使い方を想定しています。
-            </p>
-            <div class="links">
-              <span class="button is-disabled" aria-disabled="true">出版準備中</span>
-              <a class="button secondary" href="#downloads">補助プリントを見る</a>
-            </div>
+            <h2 id="book-title">理科因果ノート</h2>
+            <img class="book-cover" src="rika-inga-note-cover.png" alt="理科因果ノートの表紙" width="576" height="864" loading="lazy">
+          </div>
+          <div>
+            <p class="book-subtitle">中学受験・適性検査につながる理科の「なぜ？」を原因から結果まで説明する150問</p>
+            <p>氷が水に浮くのはなぜ？ 夕焼けが赤いのはなぜ？ ご飯をかむと甘くなるのはなぜ？<br>身近な現象を入口に、原因と結果の間にあるつながりを、一問一ページでたどる本です。</p>
+            <p>解答例を隠して声に出し、見比べて、もう一度説明する。難しいときは先に読んでも、そのまま覚えても、自分の言葉で言い換えてもかまいません。一人でも、二人でも、親子や教室でも使えます。</p>
+            <p>150問・162ページ。説明できた日を記録するチェック欄と、問いに応じたNG例・参考を収めています。</p>
+            <p class="publication-status">ペーパーバックは出版申請済みです。販売開始の案内は、このページに掲載します。</p>
           </div>
         </div>
       </section>
@@ -608,11 +561,8 @@
         <div class="section-head">
           <h2 id="profile-title">著者について</h2>
           <div>
-            <p>
-              琴見由弘。塾講師／プログラマー。理科の「なぜ？」を原因から結果までほどく教材と、
-              日常の小さな行動を +1 で残す道具を作っています。
-              中学受験・適性検査、メタ認知、体と心と頭を整える話も扱います。
-            </p>
+            <p class="author-name">琴見由弘（ことみ よしひろ）</p>
+            <p>塾講師とシステムエンジニアの二足のわらじを履いている。塾講師として12年間、高校生物・高校数学を中心に指導したのち、2019年にシステムエンジニアへ転身。2022年からふたたび教壇に立ち、中学受験の指導にあたっている。現在は、設計の目を授業や宿題にも生かし、生徒が原因から結果までを考えずには進めない流れを組み立てている。教室では『理科因果ノート』のもとになった教材を使い、理科の「なぜ？」を声に出して説明する練習を重ねている。</p>
             <div class="links">
               <a class="button secondary" href="https://note.com/kotomiyoshihiro">note</a>
               <a class="button secondary" href="https://x.com/kotomiyoshihiro">X</a>
