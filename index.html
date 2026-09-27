@@ -5,576 +5,623 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>琴見由弘｜著者サイト</title>
   <meta name="description" content="琴見由弘の著者サイト。『理科因果ノート』と習慣アプリ「かぞえ徳」の紹介、著者プロフィールを掲載しています。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="琴見由弘｜著者サイト">
+  <meta property="og:description" content="理科の「なぜ？」を原因から結果までほどく教材と、日常の小さな行動を +1 で残す道具。">
+  <meta property="og:url" content="https://kotomiyoshihiro.com/">
+  <meta property="og:image" content="https://kotomiyoshihiro.com/rika-inga-note-cover.png">
+  <meta name="theme-color" content="#f7f5f0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314242c'/%3E%3Ccircle cx='19' cy='32' r='5.5' fill='%23e2703a'/%3E%3Cline x1='25' y1='32' x2='35' y2='32' stroke='%23f4efe3' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='44' cy='32' r='9.5' fill='none' stroke='%23f4efe3' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Shippori+Mincho:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+  <script>document.documentElement.className = "js";</script>
   <style>
+    /* 墨と生成りを基調に、オレンジは『理科因果ノート』の表紙から一点だけ */
     :root {
-      --ink: #171a1c;
-      --muted: #5b6469;
-      --line: #cfd7d3;
-      --paper: #fbfbf8;
-      --wash: #eef5f1;
-      --accent: #176b5f;
-      --accent-2: #9b4b2f;
-      --white: #ffffff;
+      --paper: #f7f5f0;
+      --ink: #1a1d1f;
+      --sub: #6b6f70;
+      --faint: #9a9d9c;
+      --rule: #dcd8ce;
+      --navy: #14242c;
+      --cream: #f4efe3;
+      --orange: #e2703a;
+      --serif: "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
+      --sans: "Zen Kaku Gothic New", "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+      --latin: "Cormorant Garamond", Georgia, serif;
+      --wrap: min(1080px, calc(100% - 64px));
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
     body {
       margin: 0;
       color: var(--ink);
-      background:
-        linear-gradient(90deg, rgba(23, 106, 95, 0.07) 0 1px, transparent 1px 100%),
-        linear-gradient(180deg, rgba(23, 106, 95, 0.05) 0 1px, transparent 1px 100%),
-        var(--paper);
-      background-size: 28px 28px;
-      font-family: "Yu Mincho", "Hiragino Mincho ProN", "BIZ UDPMincho", serif;
-      line-height: 1.8;
+      background: var(--paper);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 2;
+      letter-spacing: 0.04em;
+      -webkit-font-smoothing: antialiased;
+      font-feature-settings: "palt";
     }
 
-    a {
-      color: inherit;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; }
+    p { margin: 0; }
 
-    .site {
-      min-height: 100svh;
-    }
-
+    /* ヘッダー */
     .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(247, 245, 240, 0.9);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .topbar-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
-      width: min(1080px, calc(100% - 40px));
+      width: var(--wrap);
       margin: 0 auto;
-      padding: 22px 0 14px;
-      border-bottom: 2px solid var(--ink);
-      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+      padding: 22px 0;
     }
 
     .brand {
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0;
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
     }
 
     .nav {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 14px;
+      gap: 36px;
       font-size: 13px;
-      color: var(--muted);
+      color: var(--sub);
     }
 
-    .nav a {
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
+    .nav a { transition: color 0.3s; }
+    .nav a:hover { color: var(--ink); }
+
+    /* 下線つきのリンク。ホバーで色だけ薄くする */
+    .link {
+      display: inline-block;
+      padding-bottom: 4px;
+      border-bottom: 1px solid currentColor;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      transition: opacity 0.3s;
     }
 
-    .nav a:hover {
-      color: var(--ink);
-      border-color: var(--accent);
-    }
+    .link:hover { opacity: 0.55; }
 
+    /* ファーストビュー: 名前を主役に */
     .hero {
-      width: min(1080px, calc(100% - 40px));
-      margin: 0 auto;
-      padding: 54px 0 40px;
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
-      gap: 48px;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 96px;
       align-items: end;
+      width: var(--wrap);
+      margin: 0 auto;
+      padding: 128px 0 136px;
     }
 
     .eyebrow {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 10px;
-      margin: 0 0 18px;
-      color: var(--accent);
-      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
-      font-size: 13px;
-      font-weight: 700;
+      gap: 14px;
+      margin-bottom: 36px;
+      color: var(--sub);
+      font-size: 12px;
+      letter-spacing: 0.3em;
     }
 
     .eyebrow::before {
       content: "";
-      width: 38px;
-      height: 2px;
-      background: var(--accent);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--orange);
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(42px, 7vw, 82px);
-      line-height: 1.03;
-      letter-spacing: 0;
-      font-weight: 800;
+      font-family: var(--serif);
+      font-size: clamp(48px, 7.2vw, 92px);
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: 0.16em;
+    }
+
+    .name-latin {
+      display: block;
+      margin-top: 18px;
+      color: var(--faint);
+      font-family: var(--latin);
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 0.24em;
     }
 
     .lead {
-      max-width: 720px;
-      margin: 26px 0 0;
-      color: #2c3234;
-      font-size: 18px;
+      max-width: 30em;
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--rule);
+      color: var(--sub);
+      line-height: 2.2;
     }
 
-    .book-mark {
-      position: relative;
-      min-height: 360px;
-      border: 2px solid var(--ink);
-      background: var(--white);
-      box-shadow: 10px 10px 0 var(--ink);
-      padding: 26px;
-      overflow: hidden;
+    .hero .link { margin-top: 40px; }
+
+    .hero-book { display: block; }
+
+    .hero-book img {
+      display: block;
+      width: 100%;
+      height: auto;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 24px 48px -28px rgba(20, 36, 44, 0.55);
+      transition: transform 0.6s ease;
     }
 
-    .book-mark::before {
-      content: "";
-      position: absolute;
-      inset: 18px auto 18px 18px;
-      width: 8px;
-      background: var(--accent);
-    }
+    .hero-book:hover img { transform: translateY(-4px); }
 
-    .book-mark::after {
-      content: "";
-      position: absolute;
-      right: -40px;
-      bottom: -58px;
-      width: 180px;
-      height: 180px;
-      border: 2px solid var(--line);
-      transform: rotate(12deg);
-      background:
-        linear-gradient(90deg, transparent 48%, rgba(155, 75, 47, 0.16) 49% 51%, transparent 52%),
-        linear-gradient(180deg, transparent 48%, rgba(155, 75, 47, 0.16) 49% 51%, transparent 52%);
-      background-size: 34px 34px;
-    }
-
-    .book-label {
-      position: relative;
-      z-index: 1;
-      margin-left: 24px;
-      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
-      color: var(--muted);
+    .caption {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--rule);
+      color: var(--sub);
       font-size: 12px;
-      font-weight: 700;
+      letter-spacing: 0.12em;
     }
 
-    .book-title {
-      position: relative;
-      z-index: 1;
-      margin: 50px 0 0 24px;
-      font-size: 36px;
-      line-height: 1.25;
-      font-weight: 800;
-    }
+    .caption b { color: var(--ink); font-weight: 500; }
 
-    .book-note {
-      position: relative;
-      z-index: 1;
-      margin: 26px 0 0 24px;
-      color: var(--muted);
-      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    .main {
-      width: min(1080px, calc(100% - 40px));
-      margin: 0 auto;
-      padding: 22px 0 72px;
-    }
-
+    /* セクション共通 */
     .section {
-      padding: 34px 0;
-      border-top: 1px solid var(--line);
+      width: var(--wrap);
+      margin: 0 auto;
+      padding: 120px 0;
+      border-top: 1px solid var(--rule);
     }
 
     .section-head {
       display: grid;
-      grid-template-columns: 220px minmax(0, 1fr);
-      gap: 36px;
-      align-items: start;
+      grid-template-columns: 240px minmax(0, 1fr);
+      gap: 48px;
+      margin-bottom: 64px;
     }
+
+    .num {
+      font-family: var(--latin);
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--faint);
+      font-variant-numeric: lining-nums;
+    }
+
+    #profile { border-top: 0; }
 
     h2 {
-      margin: 0;
-      font-size: 22px;
-      line-height: 1.4;
-      letter-spacing: 0;
+      margin: 10px 0 0;
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 500;
+      line-height: 1.6;
+      letter-spacing: 0.12em;
     }
 
-    .section p {
-      margin: 0;
-      color: #2d3436;
+    .section-intro {
+      align-self: end;
+      color: var(--sub);
     }
 
-    .downloads {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 24px;
-      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
-    }
-
+    /* 本と道具(一覧) */
     .works {
+      margin: 0 0 0 288px;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--ink);
+    }
+
+    .work {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 24px;
-      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+      grid-template-columns: 40px 200px minmax(0, 1fr) 24px;
+      gap: 24px;
+      align-items: baseline;
+      padding: 34px 0;
+      border-bottom: 1px solid var(--rule);
+      transition: padding 0.4s ease;
     }
 
-    .work-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 190px;
-      padding: 22px;
-      background: var(--white);
-      border: 2px solid var(--ink);
-      text-decoration: none;
-    }
+    .work:hover { padding-left: 12px; }
 
-    .work-card:hover {
-      box-shadow: 6px 6px 0 rgba(23, 106, 95, 0.2);
-      transform: translate(-1px, -1px);
+    .work strong {
+      font-family: var(--serif);
+      font-size: 21px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
     }
 
     .work-kicker {
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0;
-    }
-
-    .work-card strong {
       display: block;
-      margin-top: 14px;
-      font-size: 22px;
-      line-height: 1.35;
+      margin-top: 6px;
+      color: var(--faint);
+      font-size: 11px;
+      letter-spacing: 0.24em;
     }
 
-    .work-card span {
-      display: block;
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.7;
+    .work-desc { color: var(--sub); }
+
+    .work-arrow {
+      justify-self: end;
+      color: var(--faint);
+      transition: color 0.3s, transform 0.4s;
     }
 
-    .download {
+    .work:hover .work-arrow { color: var(--orange); transform: translateX(4px); }
+
+    /* 理科因果ノート(紺の帯) */
+    .book-band {
+      background: var(--navy);
+      color: var(--cream);
+    }
+
+    .book-band .section {
       display: grid;
-      grid-template-columns: auto 1fr auto;
-      gap: 14px;
-      align-items: center;
-      min-height: 86px;
-      padding: 17px 18px;
-      background: var(--white);
-      border: 1px solid var(--line);
-      text-decoration: none;
+      grid-template-columns: 300px minmax(0, 1fr);
+      gap: 96px;
+      align-items: start;
+      border-top: 0;
     }
 
-    .download:hover {
-      border-color: var(--accent);
-      box-shadow: 4px 4px 0 rgba(23, 106, 95, 0.2);
-      transform: translate(-1px, -1px);
-    }
-
-    .download.is-disabled {
-      color: var(--muted);
-    }
-
-    .download.is-disabled:hover {
-      border-color: var(--line);
-      box-shadow: none;
-      transform: none;
-    }
-
-    .icon {
-      display: grid;
-      place-items: center;
-      width: 36px;
-      height: 36px;
-      border: 2px solid var(--ink);
-      color: var(--ink);
-      font-weight: 800;
-      line-height: 1;
-    }
-
-    .download strong {
+    .book-cover {
       display: block;
-      font-size: 15px;
-      line-height: 1.45;
+      width: 100%;
+      height: auto;
+      box-shadow: 0 32px 64px -32px rgba(0, 0, 0, 0.8);
     }
 
-    .download span {
-      display: block;
-      margin-top: 3px;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.5;
+    .book-band .num { color: rgba(244, 239, 227, 0.45); }
+    .book-band h2 { color: #fff; font-size: 30px; }
+
+    .book-subtitle {
+      margin-top: 20px;
+      color: rgba(244, 239, 227, 0.88);
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.9;
+      letter-spacing: 0.06em;
     }
 
-    .arrow {
-      color: var(--accent);
-      font-size: 20px;
-      font-weight: 800;
+    .whys {
+      margin: 48px 0 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid rgba(244, 239, 227, 0.2);
     }
 
-    .notice {
-      margin-top: 18px;
-      padding: 16px 18px;
-      border-left: 5px solid var(--accent-2);
-      background: rgba(155, 75, 47, 0.08);
-      color: #3a302b;
-      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+    .whys li {
+      display: flex;
+      gap: 28px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(244, 239, 227, 0.2);
+      font-family: var(--serif);
+      font-size: 17px;
+      letter-spacing: 0.08em;
+    }
+
+    .whys li::before {
+      content: "問";
+      color: var(--orange);
       font-size: 13px;
-      line-height: 1.7;
+      line-height: 2.1;
     }
 
-    .links {
+    .book-text {
+      margin-top: 40px;
+      color: rgba(244, 239, 227, 0.72);
+      line-height: 2.1;
+    }
+
+    .book-text + .book-text { margin-top: 16px; }
+
+    .specs {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+      gap: 16px 56px;
+      margin: 48px 0 0;
     }
 
-    .button {
+    .specs dt {
+      color: rgba(244, 239, 227, 0.5);
+      font-size: 11px;
+      letter-spacing: 0.24em;
+    }
+
+    .specs dd {
+      margin: 4px 0 0;
+      font-family: var(--serif);
+      font-size: 17px;
+      letter-spacing: 0.08em;
+      color: #fff;
+    }
+
+    .buy {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .button-amazon {
       display: inline-flex;
       align-items: center;
-      min-height: 42px;
-      padding: 8px 16px;
-      border: 2px solid var(--ink);
-      background: var(--ink);
-      color: var(--white);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 700;
+      gap: 18px;
+      padding: 18px 32px;
+      background: var(--orange);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      transition: background 0.3s;
     }
 
-    .button.secondary {
-      background: var(--white);
-      color: var(--ink);
-    }
+    .button-amazon:hover { background: #cc5f2c; }
 
-    .button.is-disabled {
-      background: var(--white);
-      color: var(--muted);
-      border-color: var(--line);
-      cursor: default;
-    }
-
-    .footer {
-      width: min(1080px, calc(100% - 40px));
-      margin: 0 auto;
-      padding: 28px 0 38px;
-      border-top: 2px solid var(--ink);
-      color: var(--muted);
-      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+    .publication-status {
+      color: rgba(244, 239, 227, 0.55);
       font-size: 12px;
+      letter-spacing: 0.12em;
     }
 
-    @media (max-width: 820px) {
-      .topbar {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 12px;
-        width: min(1080px, calc(100% - 28px));
-        padding: 14px 0 10px;
-      }
+    /* 著者について */
+    .profile {
+      display: grid;
+      grid-template-columns: 240px minmax(0, 1fr);
+      gap: 48px;
+    }
 
-      .nav {
-        justify-content: flex-start;
-        gap: 10px;
-        font-size: 12px;
-      }
+    .profile-body { max-width: 38em; }
+
+    .author-name {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+    }
+
+    .author-kana {
+      margin-top: 4px;
+      color: var(--faint);
+      font-size: 11px;
+      letter-spacing: 0.3em;
+    }
+
+    .profile-text {
+      margin-top: 32px;
+      color: #3c4042;
+      line-height: 2.2;
+    }
+
+    .sns {
+      display: flex;
+      gap: 40px;
+      margin-top: 48px;
+    }
+
+    /* フッター */
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      width: var(--wrap);
+      margin: 0 auto;
+      padding: 40px 0 48px;
+      border-top: 1px solid var(--rule);
+      color: var(--faint);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+    }
+
+    .footer a:hover { color: var(--ink); }
+
+    a:focus-visible { outline: 1px solid var(--orange); outline-offset: 6px; }
+
+    /* ごく弱いフェード(JS が動くときだけ) */
+    .js .reveal {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 1.2s ease, transform 1.2s ease;
+    }
+
+    .js .reveal.is-in { opacity: 1; transform: none; }
+
+    @media (max-width: 900px) {
+      :root { --wrap: calc(100% - 40px); }
+
+      .topbar-inner { padding: 16px 0; }
+      .nav { gap: 20px; font-size: 12px; }
 
       .hero {
-        width: min(1080px, calc(100% - 28px));
         grid-template-columns: 1fr;
-        gap: 18px;
-        padding: 18px 0 22px;
+        gap: 64px;
+        padding: 72px 0 80px;
       }
 
-      .eyebrow {
-        margin-bottom: 12px;
-      }
+      h1 { font-size: clamp(40px, 12vw, 64px); }
+      .name-latin { font-size: 16px; margin-top: 12px; }
+      .lead { margin-top: 36px; padding-top: 24px; }
+      .hero .link { margin-top: 32px; }
+      .hero-book-wrap { width: min(64%, 260px); }
 
-      h1 {
-        font-size: 36px;
-        line-height: 1.12;
-      }
+      .section { padding: 80px 0; }
+      .section-head, .profile { grid-template-columns: 1fr; gap: 16px; }
+      .section-head { margin-bottom: 40px; }
 
-      .lead {
-        margin-top: 18px;
-        font-size: 16px;
-        line-height: 1.7;
-      }
+      .works { margin-left: 0; }
+      .work { grid-template-columns: 32px minmax(0, 1fr) 20px; gap: 8px 16px; padding: 28px 0; }
+      .work-desc { grid-column: 2 / 3; }
+      .work-arrow { grid-row: 1; grid-column: 3; }
 
-      .links {
-        margin-top: 16px;
-      }
-
-      .book-mark {
-        min-height: 138px;
-        padding: 20px;
-        box-shadow: 6px 6px 0 var(--ink);
-      }
-
-      .book-title {
-        margin-top: 18px;
-        font-size: 28px;
-      }
-
-      .book-note {
-        display: none;
-      }
-
-      .section-head {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-
-      .downloads {
-        grid-template-columns: 1fr;
-      }
-
-      .works {
-        grid-template-columns: 1fr;
-      }
+      .book-band .section { grid-template-columns: 1fr; gap: 48px; }
+      .book-cover { width: min(56%, 220px); }
+      .specs { gap: 16px 32px; }
+      .book-subtitle br { display: none; }
     }
 
-    @media print {
-      body {
-        background: var(--white);
-      }
-
-      .download,
-      .book-mark {
-        box-shadow: none;
-      }
+    @media (max-width: 560px) {
+      .nav a[href="#kazoetoku"] { display: none; }
     }
-    .book-cover { display: block; width: min(100%, 220px); height: auto; margin-top: 24px; box-shadow: 3px 5px 14px #171a1c22; }
-    .section p + p { margin-top: 18px; }
-    .book-subtitle, .author-name { font-weight: 700; }
-    .publication-status { color: var(--muted); font-size: 14px; }
-    .nav, .eyebrow, .work-card span, .book-label, .footer { font-size: 14px; }
-    .work-card span span:not(.work-kicker):not(.arrow) { font-size: 16px; }
-    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+      .js .reveal { opacity: 1; transform: none; }
+    }
   </style>
 </head>
 <body>
-  <div class="site">
-    <header class="topbar">
-      <div class="brand">琴見由弘</div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#">琴見由弘</a>
       <nav class="nav" aria-label="主要リンク">
         <a href="#works">本と道具</a>
         <a href="#book">理科因果ノート</a>
         <a href="#kazoetoku">かぞえ徳</a>
         <a href="#profile">著者について</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <section class="hero" aria-labelledby="page-title">
-      <div>
-        <p class="eyebrow">教材と道具</p>
-        <h1 id="page-title">問いと行動を、細かいステップでほどく。</h1>
-        <p class="lead">
-          塾講師／システムエンジニアとして、理科の「なぜ？」を原因から結果までほどく教材と、
-          日常の小さな行動を +1 で残す道具を作っています。
-        </p>
-        <div class="links">
-          <a class="button" href="#works">本と道具を見る</a>
-          <a class="button secondary" href="#profile">著者について</a>
+  <section class="hero" aria-labelledby="page-title">
+    <div class="reveal">
+      <p class="eyebrow">著者サイト</p>
+      <h1 id="page-title">琴見由弘<span class="name-latin">Kotomi Yoshihiro</span></h1>
+      <p class="lead">塾講師／システムエンジニアとして、理科の「なぜ？」を原因から結果までほどく教材と、日常の小さな行動を +1 で残す道具を作っています。</p>
+      <a class="link" href="#works">本と道具を見る ↓</a>
+    </div>
+
+    <div class="hero-book-wrap reveal">
+      <a class="hero-book" href="#book" aria-label="理科因果ノートの紹介へ">
+        <img src="rika-inga-note-cover.png" alt="理科因果ノートの表紙" width="576" height="864">
+      </a>
+      <p class="caption"><b>理科因果ノート</b><span>Amazonで販売中</span></p>
+    </div>
+  </section>
+
+  <main>
+    <section class="section" id="works" aria-labelledby="works-title">
+      <div class="section-head reveal">
+        <div>
+          <span class="num">01</span>
+          <h2 id="works-title">本と道具</h2>
         </div>
+        <p class="section-intro">理科の理由をたどる本と、日々の行動を記録するアプリです。</p>
       </div>
 
-      <aside class="book-mark" aria-label="琴見由弘の概要">
-        <div class="book-label">KOTOMI YOSHIHIRO</div>
-        <div class="book-title">琴見<br>由弘</div>
-        <p class="book-note">
-          理科、習慣、学び方。問いや行動を、責めずに細かいステップで扱うための教材と道具を作っています。
-        </p>
-      </aside>
+      <ul class="works reveal">
+        <li>
+          <a class="work" id="rika-cards" href="#book">
+            <span class="num">i.</span>
+            <span><strong>理科因果ノート</strong><span class="work-kicker">BOOK</span></span>
+            <span class="work-desc">中学受験・適性検査の理科を、原因から結果まで説明するための教材。</span>
+            <span class="work-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li>
+          <a class="work" id="kazoetoku" href="https://kazoetoku.pages.dev/">
+            <span class="num">ii.</span>
+            <span><strong>かぞえ徳</strong><span class="work-kicker">HABIT APP</span></span>
+            <span class="work-desc">できた時だけ、ひとつ積む。日常の小さな行動を +1 で残す習慣アプリ。</span>
+            <span class="work-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      </ul>
     </section>
 
-    <main class="main">
-      <section class="section" id="works" aria-labelledby="works-title">
-        <div class="section-head">
-          <h2 id="works-title">本と道具</h2>
-          <div>
-            <p>
-              理科の理由をたどる本と、日々の行動を記録するアプリです。
-            </p>
+    <div class="book-band" id="book">
+      <section class="section" aria-labelledby="book-title">
+        <img class="book-cover reveal" src="rika-inga-note-cover.png" alt="理科因果ノートの表紙" width="576" height="864" loading="lazy">
+        <div class="reveal">
+          <span class="num">02</span>
+          <h2 id="book-title">理科因果ノート</h2>
+          <p class="book-subtitle">中学受験・適性検査につながる理科の「なぜ？」を<br>原因から結果まで説明する150問</p>
 
-            <div class="works">
-              <a class="work-card" id="rika-cards" href="#book">
-                <span>
-                  <span class="work-kicker">SCIENCE</span>
-                  <strong>理科因果ノート</strong>
-                  <span>中学受験・適性検査の理科を、原因から結果まで説明するための教材。</span>
-                </span>
-                <span class="arrow">詳しく見る →</span>
-              </a>
+          <ul class="whys" aria-label="収録している問いの例">
+            <li>氷が水に浮くのはなぜ？</li>
+            <li>夕焼けが赤いのはなぜ？</li>
+            <li>ご飯をかむと甘くなるのはなぜ？</li>
+          </ul>
 
-              <a class="work-card" id="kazoetoku" href="https://kazoetoku.pages.dev/">
-                <span>
-                  <span class="work-kicker">HABIT APP</span>
-                  <strong>かぞえ徳</strong>
-                  <span>できた時だけ、ひとつ積む。日常の小さな行動を +1 で残す習慣アプリ。</span>
-                </span>
-                <span class="arrow">開く →</span>
-              </a>
-            </div>
+          <p class="book-text">身近な現象を入口に、原因と結果の間にあるつながりを、一問一ページでたどる本です。</p>
+          <p class="book-text">解答例を隠して声に出し、見比べて、もう一度説明する。難しいときは先に読んでも、そのまま覚えても、自分の言葉で言い換えてもかまいません。一人でも、二人でも、親子や教室でも使えます。</p>
+          <p class="book-text">説明できた日を記録するチェック欄と、問いに応じたNG例・参考を収めています。</p>
+
+          <dl class="specs">
+            <div><dt>収録</dt><dd>150問</dd></div>
+            <div><dt>ページ</dt><dd>162</dd></div>
+            <div><dt>形式</dt><dd>ペーパーバック</dd></div>
+          </dl>
+
+          <div class="buy">
+            <a class="button-amazon" href="https://www.amazon.co.jp/dp/B0HJ6V96M6">Amazonで見る <span aria-hidden="true">→</span></a>
+            <p class="publication-status">Amazonで販売中です。</p>
           </div>
         </div>
       </section>
+    </div>
 
-      <section class="section" id="book" aria-labelledby="book-title">
-        <div class="section-head">
-          <div>
-            <h2 id="book-title">理科因果ノート</h2>
-            <img class="book-cover" src="rika-inga-note-cover.png" alt="理科因果ノートの表紙" width="576" height="864" loading="lazy">
-          </div>
-          <div>
-            <p class="book-subtitle">中学受験・適性検査につながる理科の「なぜ？」を原因から結果まで説明する150問</p>
-            <p>氷が水に浮くのはなぜ？ 夕焼けが赤いのはなぜ？ ご飯をかむと甘くなるのはなぜ？<br>身近な現象を入口に、原因と結果の間にあるつながりを、一問一ページでたどる本です。</p>
-            <p>解答例を隠して声に出し、見比べて、もう一度説明する。難しいときは先に読んでも、そのまま覚えても、自分の言葉で言い換えてもかまいません。一人でも、二人でも、親子や教室でも使えます。</p>
-            <p>150問・162ページ。説明できた日を記録するチェック欄と、問いに応じたNG例・参考を収めています。</p>
-            <p class="publication-status">ペーパーバックは出版申請済みです。販売開始の案内は、このページに掲載します。</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="profile" aria-labelledby="profile-title">
-        <div class="section-head">
+    <section class="section" id="profile" aria-labelledby="profile-title">
+      <div class="profile">
+        <div class="reveal">
+          <span class="num">03</span>
           <h2 id="profile-title">著者について</h2>
-          <div>
-            <p class="author-name">琴見由弘（ことみ よしひろ）</p>
-            <p>塾講師とシステムエンジニアの二足のわらじを履いている。塾講師として12年間、高校生物・高校数学を中心に指導したのち、2019年にシステムエンジニアへ転身。2022年からふたたび教壇に立ち、中学受験の指導にあたっている。現在は、設計の目を授業や宿題にも生かし、生徒が原因から結果までを考えずには進めない流れを組み立てている。教室では『理科因果ノート』のもとになった教材を使い、理科の「なぜ？」を声に出して説明する練習を重ねている。</p>
-            <div class="links">
-              <a class="button secondary" href="https://note.com/kotomiyoshihiro">note</a>
-              <a class="button secondary" href="https://x.com/kotomiyoshihiro">X</a>
-            </div>
+        </div>
+        <div class="profile-body reveal">
+          <p class="author-name">琴見由弘</p>
+          <p class="author-kana">ことみ よしひろ</p>
+          <p class="profile-text">塾講師とシステムエンジニアの二足のわらじを履いている。塾講師として12年間、高校生物・高校数学を中心に指導したのち、2019年にシステムエンジニアへ転身。2022年からふたたび教壇に立ち、中学受験の指導にあたっている。現在は、設計の目を授業や宿題にも生かし、生徒が原因から結果までを考えずには進めない流れを組み立てている。教室では『理科因果ノート』のもとになった教材を使い、理科の「なぜ？」を声に出して説明する練習を重ねている。</p>
+          <div class="sns">
+            <a class="link" href="https://note.com/kotomiyoshihiro">note</a>
+            <a class="link" href="https://x.com/kotomiyoshihiro">X</a>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+  </main>
 
-    <footer class="footer">
+  <footer class="footer">
+    <div class="footer-inner">
       <span>© 琴見由弘</span>
-    </footer>
-  </div>
+      <a href="#">TOP ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    // 画面に入った要素をフェードで出す
+    (function () {
+      var items = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window)) {
+        items.forEach(function (el) { el.classList.add("is-in"); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
+        });
+      }, { rootMargin: "0px 0px -6% 0px" });
+      items.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
 </body>
 </html>
