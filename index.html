@@ -209,8 +209,6 @@
       font-variant-numeric: lining-nums;
     }
 
-    #profile { border-top: 0; }
-
     h2 {
       margin: 10px 0 0;
       font-family: var(--serif);
@@ -327,6 +325,25 @@
       line-height: 2.1;
     }
 
+    .whys a {
+      display: flex;
+      flex: 1;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 4px 16px;
+    }
+
+    .whys-play {
+      color: rgba(244, 239, 227, 0.55);
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      line-height: 2.4;
+      transition: color 0.3s;
+    }
+
+    .whys a:hover .whys-play { color: var(--orange); }
+
     .book-text {
       margin-top: 40px;
       color: rgba(244, 239, 227, 0.72);
@@ -385,6 +402,46 @@
       letter-spacing: 0.12em;
     }
 
+    /* 動画で見る(ショート) */
+    #shorts { border-top: 0; }
+
+    .shorts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      max-width: 640px;
+      margin: 0 0 0 288px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .short img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 9 / 16;
+      box-shadow: 0 20px 40px -24px rgba(20, 36, 44, 0.55);
+      transition: transform 0.4s ease;
+    }
+
+    .short:hover img { transform: translateY(-4px); }
+
+    .short-q {
+      display: block;
+      margin-top: 14px;
+      font-family: var(--serif);
+      font-size: 14px;
+      line-height: 1.8;
+      letter-spacing: 0.06em;
+    }
+
+    .shorts-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 40px;
+      margin: 48px 0 0 288px;
+    }
+
     /* 著者について */
     .profile {
       display: grid;
@@ -416,7 +473,8 @@
 
     .sns {
       display: flex;
-      gap: 40px;
+      flex-wrap: wrap;
+      gap: 16px 40px;
       margin-top: 48px;
     }
 
@@ -473,6 +531,10 @@
       .work-desc { grid-column: 2 / 3; }
       .work-arrow { grid-row: 1; grid-column: 3; }
 
+      .shorts { margin-left: 0; gap: 12px; }
+      .short-q { font-size: 12px; margin-top: 10px; }
+      .shorts-links { margin-left: 0; }
+
       .book-band .section { grid-template-columns: 1fr; gap: 48px; }
       .book-cover { width: min(56%, 220px); }
       .specs { gap: 16px 32px; }
@@ -480,7 +542,7 @@
     }
 
     @media (max-width: 560px) {
-      .nav a[href="#kazoetoku"] { display: none; }
+      .nav a[href="#kazoetoku"], .nav a[href="#shorts"] { display: none; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -498,6 +560,7 @@
         <a href="#works">本と道具</a>
         <a href="#book">理科因果ノート</a>
         <a href="#kazoetoku">かぞえ徳</a>
+        <a href="#shorts">動画</a>
         <a href="#profile">著者について</a>
       </nav>
     </div>
@@ -557,10 +620,10 @@
           <h2 id="book-title">理科因果ノート</h2>
           <p class="book-subtitle">中学受験・適性検査につながる理科の「なぜ？」を<br>原因から結果まで説明する150問</p>
 
-          <ul class="whys" aria-label="収録している問いの例">
-            <li>氷が水に浮くのはなぜ？</li>
-            <li>夕焼けが赤いのはなぜ？</li>
-            <li>ご飯をかむと甘くなるのはなぜ？</li>
+          <ul class="whys" aria-label="収録している問いの例(押すと動画が開きます)">
+            <li><a href="https://youtube.com/shorts/8xMesx8r9f0">氷が水に浮くのはなぜ？<span class="whys-play">動画で見る →</span></a></li>
+            <li><a href="https://www.youtube.com/@kotomiyoshihiro/shorts">夕焼けが赤いのはなぜ？<span class="whys-play">動画で見る →</span></a></li>
+            <li><a href="https://youtube.com/shorts/JRXWmnjogHQ">ご飯をかむと甘くなるのはなぜ？<span class="whys-play">動画で見る →</span></a></li>
           </ul>
 
           <p class="book-text">身近な現象を入口に、原因と結果の間にあるつながりを、一問一ページでたどる本です。</p>
@@ -581,10 +644,46 @@
       </section>
     </div>
 
+    <section class="section" id="shorts" aria-labelledby="shorts-title">
+      <div class="section-head reveal">
+        <div>
+          <span class="num">03</span>
+          <h2 id="shorts-title">動画で見る</h2>
+        </div>
+        <p class="section-intro">理科の「なぜ？」を、原因から結果まで一段ずつ説明するショート動画です。問いが出たら3秒考えて、続きを見てください。YouTube とインスタで、毎日3本。</p>
+      </div>
+
+      <ul class="shorts reveal">
+        <li>
+          <a class="short" href="https://youtube.com/shorts/X1ejHORH0QE">
+            <img src="shorts/rainbow.jpg" alt="雨上がりに虹が見えるのはなぜ？の動画" width="360" height="640" loading="lazy">
+            <span class="short-q">雨上がりに虹が見えるのはなぜ？</span>
+          </a>
+        </li>
+        <li>
+          <a class="short" href="https://youtube.com/shorts/ZHn9yG4bFfs">
+            <img src="shorts/sky.jpg" alt="空が青く見えるのはなぜ？の動画" width="360" height="640" loading="lazy">
+            <span class="short-q">空が青く見えるのはなぜ？</span>
+          </a>
+        </li>
+        <li>
+          <a class="short" href="https://youtube.com/shorts/8xMesx8r9f0">
+            <img src="shorts/ice.jpg" alt="氷が水に浮くのはなぜ？の動画" width="360" height="640" loading="lazy">
+            <span class="short-q">氷が水に浮くのはなぜ？</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="shorts-links reveal">
+        <a class="link" href="https://www.youtube.com/@kotomiyoshihiro/shorts">YouTube で見る</a>
+        <a class="link" href="https://www.instagram.com/kotomiyoshihiro/">Instagram で見る</a>
+      </div>
+    </section>
+
     <section class="section" id="profile" aria-labelledby="profile-title">
       <div class="profile">
         <div class="reveal">
-          <span class="num">03</span>
+          <span class="num">04</span>
           <h2 id="profile-title">著者について</h2>
         </div>
         <div class="profile-body reveal">
@@ -594,6 +693,8 @@
           <div class="sns">
             <a class="link" href="https://note.com/kotomiyoshihiro">note</a>
             <a class="link" href="https://x.com/kotomiyoshihiro">X</a>
+            <a class="link" href="https://www.youtube.com/@kotomiyoshihiro">YouTube</a>
+            <a class="link" href="https://www.instagram.com/kotomiyoshihiro/">Instagram</a>
           </div>
         </div>
       </div>
