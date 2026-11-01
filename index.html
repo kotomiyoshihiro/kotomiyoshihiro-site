@@ -11,6 +11,48 @@
   <meta property="og:url" content="https://kotomiyoshihiro.com/">
   <meta property="og:image" content="https://kotomiyoshihiro.com/rika-inga-note-cover.png">
   <meta name="theme-color" content="#f7f5f0">
+  <!-- 検索と AI の要約が、名字の同じ別の人と取り違えないように、著者を構造化データで示す -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://kotomiyoshihiro.com/#person",
+        "name": "琴見由弘",
+        "alternateName": ["ことみ よしひろ", "Kotomi Yoshihiro"],
+        "jobTitle": ["塾講師", "システムエンジニア"],
+        "description": "塾講師とシステムエンジニア。塾講師として12年間、高校生物・高校数学を中心に指導したのち、2019年にシステムエンジニアへ転身。2022年からふたたび中学受験の指導にあたっている。『理科因果ノート』の著者。",
+        "disambiguatingDescription": "『理科因果ノート』の著者で、中学受験の理科を教える塾講師・システムエンジニア。",
+        "knowsAbout": ["理科", "中学受験"],
+        "url": "https://kotomiyoshihiro.com/",
+        "sameAs": [
+          "https://x.com/kotomiyoshihiro",
+          "https://note.com/kotomiyoshihiro",
+          "https://www.youtube.com/@kotomiyoshihiro",
+          "https://www.instagram.com/kotomiyoshihiro/",
+          "https://www.tiktok.com/@kotomiyoshihiro",
+          "https://www.amazon.co.jp/stores/author/B0HJ87GZ1J"
+        ]
+      },
+      {
+        "@type": "Book",
+        "@id": "https://kotomiyoshihiro.com/#book",
+        "name": "理科因果ノート",
+        "author": { "@id": "https://kotomiyoshihiro.com/#person" },
+        "url": "https://www.amazon.co.jp/dp/B0HJ6V96M6",
+        "image": "https://kotomiyoshihiro.com/rika-inga-note-cover.png"
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://kotomiyoshihiro.com/#page",
+        "url": "https://kotomiyoshihiro.com/",
+        "name": "琴見由弘｜著者サイト",
+        "mainEntity": { "@id": "https://kotomiyoshihiro.com/#person" }
+      }
+    ]
+  }
+  </script>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314242c'/%3E%3Ccircle cx='19' cy='32' r='5.5' fill='%23e2703a'/%3E%3Cline x1='25' y1='32' x2='35' y2='32' stroke='%23f4efe3' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='44' cy='32' r='9.5' fill='none' stroke='%23f4efe3' stroke-width='3'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
