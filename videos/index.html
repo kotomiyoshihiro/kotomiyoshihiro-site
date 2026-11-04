@@ -510,6 +510,7 @@
 
       function card(v) {
         var li = el("li", "card");
+        li.id = "v-" + v.id; // トップのリンク(videos/#v-<ID>)の飛び先
         var frame = el("div", "frame");
         var button = el("button", "play");
         button.type = "button";
@@ -566,6 +567,12 @@
           sec.appendChild(ul);
           list.appendChild(sec);
         });
+
+        // 一覧はあとから作るので、#v-<ID> や #unit-N へは作ったあとで飛ぶ
+        if (location.hash.length > 1) {
+          var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+          if (target) target.scrollIntoView();
+        }
       }
 
       fetch("videos.json", { cache: "no-cache" })
