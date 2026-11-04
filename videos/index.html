@@ -571,7 +571,14 @@
         // 一覧はあとから作るので、#v-<ID> や #unit-N へは作ったあとで飛ぶ
         if (location.hash.length > 1) {
           var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
-          if (target) target.scrollIntoView();
+          if (target) {
+            // サイトの scroll-behavior: smooth のままだと、読み込み中の動きで止まることがある
+            var root = document.documentElement;
+            var prev = root.style.scrollBehavior;
+            root.style.scrollBehavior = "auto";
+            target.scrollIntoView({ block: "start" });
+            root.style.scrollBehavior = prev;
+          }
         }
       }
 
