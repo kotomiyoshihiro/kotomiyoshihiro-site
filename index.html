@@ -101,6 +101,9 @@
 
     .link:hover { opacity: 0.55; }
 
+    /* 動画の一覧ページへのリンク(ほかのリンクより一段目立たせる) */
+    .link-strong { color: var(--orange); font-size: 14px; font-weight: 500; }
+
     /* ファーストビュー: 名前を主役に */
     .hero {
       display: grid;
@@ -464,11 +467,13 @@
       letter-spacing: 0.06em;
     }
 
+    .shorts-all { margin: 48px 0 0 288px; }
+
     .shorts-links {
       display: flex;
       flex-wrap: wrap;
       gap: 16px 40px;
-      margin: 48px 0 0 288px;
+      margin: 28px 0 0 288px;
     }
 
     /* 著者について */
@@ -563,7 +568,7 @@
       .intro-video { margin: 0 0 48px; }
       .shorts { margin-left: 0; gap: 12px; }
       .short-q { font-size: 12px; margin-top: 10px; }
-      .shorts-links { margin-left: 0; }
+      .shorts-all, .shorts-links { margin-left: 0; }
 
       .book-band .section { grid-template-columns: 1fr; gap: 48px; }
       .book-cover { width: min(56%, 220px); }
@@ -711,6 +716,8 @@
           </a>
         </li>
       </ul>
+
+      <p class="shorts-all reveal"><a class="link link-strong" href="videos/">すべての動画を、単元ごとに見る →</a></p>
 
       <div class="shorts-links reveal">
         <a class="link" href="https://www.youtube.com/@kotomiyoshihiro/shorts">YouTube で見る</a>
